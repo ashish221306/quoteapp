@@ -1,0 +1,54 @@
+.quotes_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+.quote {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+.quote .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+    height: 300px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: #fff;
+}
+.quote .text {
+    z-index: 1;
+}
+.quote .info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding: 10px 20px;
+}
+.quote .content::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+}
+.quote .img {
+    z-index: -1;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.pagination span {
+    line-height: 1;
+}

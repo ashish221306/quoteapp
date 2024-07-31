@@ -1,0 +1,6 @@
+{
+  "extends": ["next/babel",
+  "plugin:react/recommended",
+        "plugin:@next/next/recommended"]
+  
+}

@@ -1,0 +1,108 @@
+.formcontainer {
+    display: flex;
+    width: 700px;
+    margin: 40px auto;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px #00000090;
+    overflow: hidden;
+}
+.formcontainer .image {
+    position: relative;
+    width: 50%;
+    min-height: 200px;
+}
+.formcontainer form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    padding: 20px;
+}
+.formcontainer input {
+    padding: 10px 13px;
+    width: 250px;
+    display: block;
+    outline: none;
+    border: 2px solid #ddd;
+    font-size: 16px;
+}
+.formcontainer input:focus {
+    border: 2px solid blue;
+}
+.formcontainer input::placeholder {
+    opacity: 0;
+}
+.formcontainer label {
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+.formcontainer label::before {
+    content: attr(for);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    pointer-events: none;
+    transition: all 0.3s;
+    background: #fff;
+    padding: 0 5px;
+}
+.formcontainer label:has(input:focus)::before {
+    top: 0;
+    color: blue;
+}
+.formcontainer label:has(input:not(:placeholder-shown))::before {
+    top: 0;
+}
+.formcontainer h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(#eee, blue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.formcontainer .content {
+    display: flex;
+    flex-direction: column;
+}
+
+.formcontainer button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: blue;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    width: 250px;
+    cursor: pointer;
+}
+.formcontainer textarea {
+    padding: 10px;
+    font-family: inherit;
+    min-height: 90px;
+    font-size: inherit;
+    outline: none;
+    border: 2px solid #ddd;
+    width: 250px;
+}
+/*responsive*/
+@media (max-width: 767px) {
+    .formcontainer {
+        flex-direction: column;
+        max-width: 95%;
+        padding: 30px 10px;
+        box-shadow: none;
+    }
+    .formcontainer form {
+        width: 100%;
+        padding: 0;
+    }
+
+    .formcontainer .image {
+        display: none;
+    }
+}

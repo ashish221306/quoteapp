@@ -25,17 +25,23 @@ const Footer = () => {
                         <ul>
                             <li>
                                 <Link aria-label="facebook" href="https://www.facebook.com/kutumbapp">
-                                    <FaFacebookF />
+                                    <a>
+                                        <FaFacebookF />
+                                    </a>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" aria-label="facebook">
-                                    <FaTwitter />
+                                <Link href="/" aria-label="twitter">
+                                    <a>
+                                        <FaTwitter />
+                                    </a>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" aria-label="facebook">
-                                    <FaInstagram />
+                                <Link href="/" aria-label="instagram">
+                                    <a>
+                                        <FaInstagram />
+                                    </a>
                                 </Link>
                             </li>
                         </ul>

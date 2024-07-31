@@ -22,5 +22,5 @@ export function middleware(request) {
     }
 }
 export const config = {
-    matcher: ["/quotes","/add", "/api/:path*"],
+    matcher: ["/","/quotes","/add", "/api/:path*"],
 };

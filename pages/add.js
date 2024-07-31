@@ -16,7 +16,11 @@ const AddQuote = () => {
                         <h2>Add Quote</h2>
                         <label for="Image">
                             <input
-                                onChange={e => setimage(URL.createObjectURL(e.target.files[0]))}
+                                onChange={e => {
+                                    if (e.target.value) {
+                                        setimage(URL.createObjectURL(e.target.files[0]));
+                                    }
+                                }}
                                 required
                                 accept="image/*"
                                 name="image"

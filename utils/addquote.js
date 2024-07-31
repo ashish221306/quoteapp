@@ -15,7 +15,7 @@ export const addQuote = async e => {
     });
     const uploadresult = await uploadres.json();
     const imageurl = uploadresult[0].url;
-    console.log(imageurl);
+
     if (imageurl) {
         const response = await fetch(`/api/postQuote`, {
             method: "POST",

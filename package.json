@@ -12,6 +12,7 @@
     "cookies": "^0.9.1",
     "next": "^12.2.4",
     "next-seo": "^5.11.1",
+    "nprogress": "^0.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",

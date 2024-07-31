@@ -1,5 +1,8 @@
 export const authenticate = async e => {
     e.preventDefault();
+    const submitbutton = e.nativeEvent.submitter;
+    submitbutton.innerText = "processing...";
+
     const result = await fetch(`/api/login`, {
         method: "POST",
         headers: {
@@ -10,6 +13,7 @@ export const authenticate = async e => {
             otp: e.target.otp.value,
         }),
     });
+    submitbutton.innerText = "Login";
     if (result.ok) {
         const data = await result.json();
         return data;

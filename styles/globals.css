@@ -175,7 +175,10 @@ a {
     text-align: center;
     padding: 100px 0;
 }
-
+#nprogress .bar {
+    background: var(--themeclr1) !important;
+    height: 10px;
+}
 @media screen and (max-width: 768px) {
     nav > ul > li {
         border-top: 1px solid #f1f1f133;

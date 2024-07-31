@@ -1,21 +1,22 @@
-import Head from "next/head";
+import nProgress from "nprogress";
 import Layout from "../components/layout";
 import "../styles/globals.css";
+import "nprogress/nprogress.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {Router} from "next/router";
 function MyApp({ Component, pageProps }) {
+    Router.events.on("routeChangeStart", () => {
+        nProgress.start();
+    });
+    Router.events.on("routeChangeComplete", () => {
+        nProgress.done();
+    });
+    Router.events.on("routeChangeError", () => nProgress.done());
     return (
         <Layout>
-            <Head>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-                    rel="stylesheet"
-                />
-            </Head>
             <Component {...pageProps} />
-            <ToastContainer />
+            <ToastContainer position="bottom-left" autoClose="600" theme="light"/>
         </Layout>
     );
 }
